@@ -1,10 +1,12 @@
-class Task {
+import 'package:equatable/equatable.dart';
+
+class Task extends Equatable {
   final String title;
   final int icon;
   final String color;
   final List<dynamic>? todos;
 
-  Task({
+  const Task({
     required this.title,
     required this.icon,
     required this.color,
@@ -37,4 +39,7 @@ class Task {
         'color': color,
         'todos': todos,
       };
+
+  @override
+  List<Object?> get props => [title, icon, color];
 }
