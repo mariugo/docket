@@ -11,6 +11,7 @@ class HomeController extends GetxController {
   final editController = TextEditingController();
   final tasks = <Task>[].obs;
   final chipIndex = 0.obs;
+  final isDeleting = false.obs;
 
   HomeController({
     required this.taskRepository,
@@ -27,6 +28,14 @@ class HomeController extends GetxController {
   void dispose() {
     editController.dispose();
     super.dispose();
+  }
+
+  void changeDeleting(bool value) {
+    isDeleting.value = value;
+  }
+
+  void deleteTask(Task task) {
+    tasks.remove(task);
   }
 
   void changeChipIndex(int index) {

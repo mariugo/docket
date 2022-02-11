@@ -7,6 +7,7 @@ class DataStoreService extends GetxService {
 
   Future<DataStoreService> init() async {
     _dataStore = GetStorage();
+    //await _dataStore.write(taskKey, []);
     await _dataStore.writeIfNull(taskKey, []);
     return this;
   }
