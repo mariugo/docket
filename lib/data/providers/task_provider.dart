@@ -8,7 +8,7 @@ import '/data/model/task.dart';
 class TaskProvider {
   final _dataStoreService = Get.find<DataStoreService>();
 
-  void writeTaks(List<Task> tasks) {
+  void writeTasks(List<Task> tasks) {
     _dataStoreService.write(taskKey, jsonEncode(tasks));
   }
 
