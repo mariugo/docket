@@ -10,4 +10,12 @@ class DataStoreService extends GetxService {
     await _dataStore.writeIfNull(taskKey, []);
     return this;
   }
+
+  T read<T>(String key) {
+    return _dataStore.read(key);
+  }
+
+  void write(String key, dynamic value) async {
+    await _dataStore.write(key, value);
+  }
 }
