@@ -1,4 +1,6 @@
+import 'package:docket/data/model/task.dart';
 import 'package:docket/modules/home/widgets/add_card_widget.dart';
+import 'package:docket/modules/home/widgets/task_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -29,6 +31,9 @@ class HomeView extends GetView<HomeController> {
               shrinkWrap: true,
               physics: const ClampingScrollPhysics(),
               children: [
+                ...controller.tasks
+                    .map((_task) => TaskCardWidget(task: _task))
+                    .toList(),
                 AddCardWidget(),
               ],
             ),
