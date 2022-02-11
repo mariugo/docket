@@ -1,3 +1,4 @@
+import 'package:docket/modules/home/home_binding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      initialBinding: HomeBinding(),
       home: const HomeView(),
     );
   }
