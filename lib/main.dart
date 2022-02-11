@@ -1,8 +1,11 @@
-import 'package:docket/modules/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
-void main() async {
+import '/modules/home/home_view.dart';
+
+main() async {
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
