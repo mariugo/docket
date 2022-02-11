@@ -1,7 +1,10 @@
+import 'package:docket/core/values/colors.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 
+import '../../../data/model/task.dart';
 import '/core/utils/extensions.dart';
 import '/modules/home/home_controller.dart';
 import '/widgets/icons_data.dart';
@@ -76,10 +79,43 @@ class AddCardWidget extends StatelessWidget {
                           .toList(),
                     ),
                   ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      minimumSize: const Size(150, 40),
+                    ),
+                    onPressed: () {
+                      if (homeController.formKey.currentState!.validate()) {
+                        int icon = icons[homeController.chipIndex.value]
+                            .icon!
+                            .codePoint;
+                        String color = icons[homeController.chipIndex.value]
+                            .color!
+                            .toHex();
+                        var task = Task(
+                          title: homeController.editController.text,
+                          icon: icon,
+                          color: color,
+                        );
+                        Get.back();
+                        homeController.addTask(task)
+                            ? EasyLoading.showSuccess('Task created')
+                            : EasyLoading.showError('Duplicated task');
+                      }
+                    },
+                    child: const Text(
+                      'Confirm',
+                    ),
+                  ),
                 ],
               ),
             ),
           );
+          homeController.editController.clear();
+          homeController.changeChipIndex(0);
         },
         child: DottedBorder(
           color: Colors.grey[400]!,
