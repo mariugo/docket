@@ -1,10 +1,11 @@
-import 'package:docket/modules/home/home_binding.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 import '/data/local/data_store_service.dart';
 import '/modules/home/home_view.dart';
+import '/modules/home/home_binding.dart';
 
 main() async {
   await GetStorage.init();
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       initialBinding: HomeBinding(),
+      builder: EasyLoading.init(),
       home: const HomeView(),
     );
   }
