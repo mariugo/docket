@@ -1,3 +1,4 @@
+import 'package:docket/modules/home/widgets/add_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,6 +23,14 @@ class HomeView extends GetView<HomeController> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+            ),
+            GridView.count(
+              crossAxisCount: 2,
+              shrinkWrap: true,
+              physics: const ClampingScrollPhysics(),
+              children: [
+                AddCardWidget(),
+              ],
             ),
           ],
         ),
