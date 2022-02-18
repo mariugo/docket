@@ -1,6 +1,7 @@
 import 'package:docket/core/values/colors.dart';
 import 'package:docket/data/model/task.dart';
 import 'package:docket/modules/home/widgets/add_card_widget.dart';
+import 'package:docket/modules/home/widgets/add_todo_dialog_widget.dart';
 import 'package:docket/modules/home/widgets/task_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -64,7 +65,10 @@ class HomeView extends GetView<HomeController> {
           return Obx(
             () => FloatingActionButton(
               backgroundColor: controller.isDeleting.value ? Colors.red : blue,
-              onPressed: () {},
+              onPressed: () => Get.to(
+                () => AddTodoDialogWidget(),
+                transition: Transition.downToUp,
+              ),
               child: Icon(
                 controller.isDeleting.value ? Icons.delete : Icons.add,
               ),
