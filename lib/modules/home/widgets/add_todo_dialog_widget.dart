@@ -20,7 +20,7 @@ class AddTodoDialogWidget extends StatelessWidget {
         child: ListView(
           children: [
             Padding(
-              padding: EdgeInsets.all(3.0.deviceWidth),
+              padding: EdgeInsets.all(3.0.widthPoints),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -71,7 +71,7 @@ class AddTodoDialogWidget extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5.0.deviceWidth),
+              padding: EdgeInsets.symmetric(horizontal: 5.0.widthPoints),
               child: Text(
                 'New Task',
                 style: TextStyle(
@@ -81,7 +81,7 @@ class AddTodoDialogWidget extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5.0.deviceWidth),
+              padding: EdgeInsets.symmetric(horizontal: 5.0.widthPoints),
               child: TextFormField(
                   controller: homeController.editController,
                   decoration: InputDecoration(
@@ -101,10 +101,10 @@ class AddTodoDialogWidget extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(
-                top: 5.0.deviceWidth,
-                left: 5.0.deviceWidth,
-                right: 5.0.deviceWidth,
-                bottom: 2.0.deviceWidth,
+                top: 5.0.widthPoints,
+                left: 5.0.widthPoints,
+                right: 5.0.widthPoints,
+                bottom: 2.0.widthPoints,
               ),
               child: Text(
                 'Add task to:',
@@ -120,8 +120,8 @@ class AddTodoDialogWidget extends StatelessWidget {
                   onTap: () => homeController.changeTask(_element),
                   child: Padding(
                     padding: EdgeInsets.symmetric(
-                      vertical: 3.0.deviceWidth,
-                      horizontal: 5.0.deviceWidth,
+                      vertical: 3.0.widthPoints,
+                      horizontal: 5.0.widthPoints,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -138,7 +138,7 @@ class AddTodoDialogWidget extends StatelessWidget {
                               ),
                             ),
                             SizedBox(
-                              width: 3.0.deviceWidth,
+                              width: 3.0.widthPoints,
                             ),
                             Text(
                               _element.title,

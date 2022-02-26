@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 extension PercentSized on double {
-  double get deviceHeight => (Get.height * (this / 100));
-  double get deviceWidth => (Get.width * (this / 100));
+  double get heightPoints => (Get.height * (this / 100));
+  double get widthPoints => (Get.width * (this / 100));
 }
 
 extension ResponsiveText on double {
