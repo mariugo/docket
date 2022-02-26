@@ -132,4 +132,15 @@ class HomeController extends GetxController {
       (_todo) => _todo['title'] == title,
     );
   }
+
+  void doneTodo(String title) {
+    var doingTodo = {'title': title, 'done': false};
+    int index = doingTodos
+        .indexWhere((_todo) => mapEquals<String, dynamic>(doingTodo, _todo));
+    doingTodos.removeAt(index);
+    var doneTodo = {'title': title, 'done': true};
+    doneTodos.add(doneTodo);
+    doingTodos.refresh();
+    doneTodos.refresh();
+  }
 }

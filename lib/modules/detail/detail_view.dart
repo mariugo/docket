@@ -1,4 +1,5 @@
 import 'package:docket/core/utils/extensions.dart';
+import 'package:docket/modules/detail/widgets/doing_list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
@@ -160,6 +161,7 @@ class DetailView extends StatelessWidget {
                   },
                 ),
               ),
+              DoingListWidget(),
             ],
           ),
         ),
