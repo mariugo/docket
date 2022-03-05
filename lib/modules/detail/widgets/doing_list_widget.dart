@@ -36,7 +36,7 @@ class DoingListWidget extends StatelessWidget {
               children: [
                 ...homeController.doingTodos
                     .map(
-                      (_todo) => Padding(
+                      (todo) => Padding(
                         padding: EdgeInsets.symmetric(
                           vertical: 3.0.widthPoints,
                           horizontal: 9.0.widthPoints,
@@ -50,9 +50,9 @@ class DoingListWidget extends StatelessWidget {
                                 fillColor: MaterialStateProperty.resolveWith(
                                   (_) => Colors.grey,
                                 ),
-                                value: _todo['done'],
-                                onChanged: (_value) {
-                                  homeController.doneTodo(_todo['title']);
+                                value: todo['done'],
+                                onChanged: (value) {
+                                  homeController.doneTodo(todo['title']);
                                 },
                               ),
                             ),
@@ -61,7 +61,7 @@ class DoingListWidget extends StatelessWidget {
                                 horizontal: 4.0.widthPoints,
                               ),
                               child: Text(
-                                _todo['title'],
+                                todo['title'],
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),
@@ -73,7 +73,7 @@ class DoingListWidget extends StatelessWidget {
                 if (homeController.doingTodos.isNotEmpty)
                   Padding(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 4.0.widthPoints,
+                      horizontal: 5.0.widthPoints,
                     ),
                     child: const Divider(
                       thickness: 2,

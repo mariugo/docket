@@ -80,12 +80,19 @@ class DetailView extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        Text(
-                          '$totalTodos Tasks',
-                          style: TextStyle(
-                            fontSize: 12.0.sp,
-                          ),
-                        ),
+                        totalTodos <= 1
+                            ? Text(
+                                '$totalTodos Task',
+                                style: TextStyle(
+                                  fontSize: 12.0.sp,
+                                ),
+                              )
+                            : Text(
+                                '$totalTodos Tasks',
+                                style: TextStyle(
+                                  fontSize: 12.0.sp,
+                                ),
+                              ),
                         SizedBox(
                           width: 3.0.widthPoints,
                         ),
@@ -139,7 +146,7 @@ class DetailView extends StatelessWidget {
                     suffixIcon: IconButton(
                       onPressed: () {
                         if (homeController.formKey.currentState!.validate()) {
-                          bool success = homeController
+                          var success = homeController
                               .addTodo(homeController.editController.text);
                           if (success) {
                             EasyLoading.showSuccess('Todo added');

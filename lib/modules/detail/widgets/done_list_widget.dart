@@ -22,7 +22,7 @@ class DoneListWidget extends StatelessWidget {
                     horizontal: 5.0.widthPoints,
                   ),
                   child: Text(
-                    'Completed(${homeController.doneTodos.length})todos',
+                    'Completed (${homeController.doneTodos.length}) todos',
                     style: TextStyle(
                       fontSize: 14.0.sp,
                       color: Colors.grey,
@@ -30,14 +30,14 @@ class DoneListWidget extends StatelessWidget {
                   ),
                 ),
                 ...homeController.doneTodos
-                    .map((_todo) => Dismissible(
-                          key: ObjectKey(_todo),
-                          direction: DismissDirection.endToStart,
+                    .map((todo) => Dismissible(
+                          key: ObjectKey(todo),
+                          direction: DismissDirection.startToEnd,
                           onDismissed: (_) =>
-                              homeController.deleteDonetodo(_todo),
+                              homeController.deleteDonetodo(todo),
                           background: Container(
                             color: Colors.red.withOpacity(0.8),
-                            alignment: Alignment.centerRight,
+                            alignment: Alignment.centerLeft,
                             child: Padding(
                               padding: EdgeInsets.only(
                                 right: 5.0.widthPoints,
@@ -68,7 +68,7 @@ class DoneListWidget extends StatelessWidget {
                                     horizontal: 4.0.widthPoints,
                                   ),
                                   child: Text(
-                                    _todo['title'],
+                                    todo['title'],
                                     overflow: TextOverflow.ellipsis,
                                     style: const TextStyle(
                                       decoration: TextDecoration.lineThrough,
