@@ -16,6 +16,7 @@ class HomeController extends GetxController {
   final isDeleting = false.obs;
   final doingTodos = <dynamic>[].obs;
   final doneTodos = <dynamic>[].obs;
+  final tabIndex = 0.obs;
 
   HomeController({
     required this.taskRepository,
@@ -32,6 +33,10 @@ class HomeController extends GetxController {
   void dispose() {
     editController.dispose();
     super.dispose();
+  }
+
+  void changeTabIndex(int index) {
+    tabIndex.value = index;
   }
 
   void changeDeleting(bool value) {
