@@ -5,7 +5,7 @@ import 'package:step_progress_indicator/step_progress_indicator.dart';
 import '/data/model/task.dart';
 import '/modules/home/home_controller.dart';
 import '/modules/detail/detail_view.dart';
-import '/core/utils/extensions.dart';
+import 'package:docket/core/utils/extensions.dart';
 
 class TaskCardWidget extends StatelessWidget {
   final homeController = Get.find<HomeController>();
@@ -95,7 +95,7 @@ class TaskCardWidget extends StatelessWidget {
                     height: 2.0.widthPoints,
                   ),
                   Text(
-                    '${task.todos?.length ?? 0} Task',
+                    '${task.todos?.length ?? 0} Tasks',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.grey,

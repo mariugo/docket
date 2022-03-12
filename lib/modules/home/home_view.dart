@@ -25,9 +25,11 @@ class HomeView extends GetView<HomeController> {
               child: ListView(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(
+                      4.0.widthPoints,
+                    ),
                     child: Text(
-                      'My List',
+                      'My Tasks',
                       style: TextStyle(
                         fontSize: 24.0.sp,
                         fontWeight: FontWeight.bold,
@@ -53,8 +55,11 @@ class HomeView extends GetView<HomeController> {
                                 onDragEnd: (_) => controller.changeDeleting(
                                       false,
                                     ),
-                                feedback: const Opacity(
+                                feedback: Opacity(
                                   opacity: 0.8,
+                                  child: TaskCardWidget(
+                                    task: _task,
+                                  ),
                                 ),
                                 child: TaskCardWidget(task: _task)))
                             .toList(),
