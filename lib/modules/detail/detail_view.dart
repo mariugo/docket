@@ -1,12 +1,12 @@
-import 'package:docket/core/utils/extensions.dart';
-import 'package:docket/modules/detail/widgets/doing_list_widget.dart';
-import 'package:docket/modules/detail/widgets/done_list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 import 'package:docket/modules/home/home_controller.dart';
-import 'package:step_progress_indicator/step_progress_indicator.dart';
+import '/core/utils/extensions.dart';
+import '/modules/detail/widgets/doing_list_widget.dart';
+import '/modules/detail/widgets/done_list_widget.dart';
 
 class DetailView extends StatelessWidget {
   final homeController = Get.find<HomeController>();

@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
-import 'package:docket/data/local/task_repository.dart';
-
-import '../../data/model/task.dart';
+import '/data/local/task_repository.dart';
+import '/data/model/task.dart';
 
 class HomeController extends GetxController {
   final TaskRepository taskRepository;

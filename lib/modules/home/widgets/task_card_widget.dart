@@ -1,11 +1,11 @@
-import 'package:docket/modules/detail/detail_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 import '/data/model/task.dart';
 import '/modules/home/home_controller.dart';
-import 'package:docket/core/utils/extensions.dart';
+import '/modules/detail/detail_view.dart';
+import '/core/utils/extensions.dart';
 
 class TaskCardWidget extends StatelessWidget {
   final homeController = Get.find<HomeController>();

@@ -1,4 +1,3 @@
-import 'package:docket/core/values/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -6,6 +5,7 @@ import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 import '/modules/home/home_controller.dart';
 import '/core/utils/extensions.dart';
+import '/core/values/colors.dart';
 
 class ReportView extends StatelessWidget {
   final homeController = Get.find<HomeController>();

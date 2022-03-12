@@ -1,6 +1,7 @@
-import 'package:docket/core/values/keys.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+
+import '/core/values/keys.dart';
 
 class DataStoreService extends GetxService {
   late GetStorage _dataStore;
