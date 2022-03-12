@@ -65,7 +65,7 @@ class HomeView extends GetView<HomeController> {
                 ],
               ),
             ),
-            const ReportView(),
+            ReportView(),
           ],
         ),
       ),
